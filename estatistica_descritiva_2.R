@@ -86,6 +86,6 @@ b <- ggplot(d, aes(x = Month, y = media_vento, fill = Month)) +
   theme(legend.position = "none")
 b
 
-library(cowplot)
+library(cowplot) # Pacote usado para juntar gráficos
 
 plot_grid(a, b)
