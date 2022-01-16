@@ -24,8 +24,8 @@ min(dados$Temp) # temperatura mínima
 mean(dados$Wind) # média
 sd(dados$Wind) # desvio-padrão
 median(dados$Wind) # mediana
-max(dados$Wind) # temperatura máxima
-min(dados$Wind) # temperatura mínima
+max(dados$Wind) # vento máximo
+min(dados$Wind) # vento mínimo
 
 library(dplyr) # Pacote usado para análises descritivas
 
@@ -35,5 +35,7 @@ dados %>%
   select(Month, Temp, Wind) %>%
   group_by(Month) %>%
   summarise(media_temp = mean(Temp),
-            media_vento = mean(Wind))
+            media_vento = mean(Wind),
+            desvio_temp = sd(Temp),
+            desvio_vento = sd(Wind))
 
