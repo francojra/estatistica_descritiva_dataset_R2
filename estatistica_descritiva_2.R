@@ -66,7 +66,7 @@ a <- ggplot(d, aes(x = Month, y = media_temp, fill = Month)) +
   scale_x_discrete(breaks = c(5, 6, 7, 8, 9),
                    labels = c("Maio", "Junho", "Julho",
                               "Agosto", "Setembro")) +
-  labs(x = "Meses", y = "Temperatura média") +
+  labs(x = "Meses", y = "Temperatura média (Fahrenheit)") +
   theme_ipsum_rc(base_size = 10) +
   theme(legend.position = "none")
 a
@@ -81,7 +81,7 @@ b <- ggplot(d, aes(x = Month, y = media_vento, fill = Month)) +
   scale_x_discrete(breaks = c(5, 6, 7, 8, 9),
                    labels = c("Maio", "Junho", "Julho",
                               "Agosto", "Setembro")) +
-  labs(x = "Meses", y = "Ventania média") +
+  labs(x = "Meses", y = "Velocidade média do vento (mph)") +
   theme_ipsum_rc(base_size = 10) +
   theme(legend.position = "none")
 b
