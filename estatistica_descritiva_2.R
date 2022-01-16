@@ -32,5 +32,5 @@ library(dplyr) # Pacote usado para análises descritivas
 dados %>% 
   select(Month, Temp, Wind) %>%
   group_by(Month) %>%
-  arrange(mean(Temp))
+  summarise(mean(Temp))
 
