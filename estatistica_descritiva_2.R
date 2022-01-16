@@ -31,11 +31,30 @@ library(dplyr) # Pacote usado para análises descritivas
 
 ### Média e desvio padrão da temperatura e vento para cada mês
 
-dados %>% 
+d <- dados %>% 
   select(Month, Temp, Wind) %>%
   group_by(Month) %>%
   summarise(media_temp = mean(Temp),
             media_vento = mean(Wind),
             desvio_temp = sd(Temp),
             desvio_vento = sd(Wind))
+d
+
+# Gráficos ---------------------------------------------------------------------------------------------------------------------------------
+
+library(ggplot2) # Pacote para produzir os gráficos
+#install.packages("hrbrthemes")
+library(hrbrthemes)
+
+## Temperatura
+
+ggplot(d, aes(x = Month, y = media_temp, fill = Month)) +
+  geom_col() +
+    geom_text(aes(x = Month,
+                label = round(media_temp))) +
+  labs(x = "Meses", y = "Temperatura média") +
+  theme(legend.position = "none")
+
+## Vento
+
 
