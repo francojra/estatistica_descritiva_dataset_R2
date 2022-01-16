@@ -29,8 +29,11 @@ min(dados$Wind) # temperatura mínima
 
 library(dplyr) # Pacote usado para análises descritivas
 
+### Média e desvio padrão da temperatura e vento para cada mês
+
 dados %>% 
   select(Month, Temp, Wind) %>%
   group_by(Month) %>%
-  summarise(mean(Temp))
+  summarise(media_temp = mean(Temp),
+            media_vento = mean(Wind))
 
