@@ -40,6 +40,14 @@ d <- dados %>%
             desvio_vento = sd(Wind))
 d
 
+# Etapas da produção dos gráficos ----------------------------------------------------------------------------------------------------------
+
+# 1. Definir variáveis e tipo de gráfico;
+# 2. Definir títulos dos eixos;
+# 3. Acrescentar um tema ao gráfico, reduzir largura das barras e retirar a legenda
+# 4. Transformar mês em variável fatorial e mudar nome dos eixos
+# 5. Nomear os gráficos e uni-los em uma janela.
+
 # Gráficos ---------------------------------------------------------------------------------------------------------------------------------
 
 library(ggplot2) # Pacote para produzir os gráficos
@@ -50,22 +58,32 @@ d$Month <- as.factor(d$Month)
 
 ## Temperatura
 
-ggplot(d, aes(x = Month, y = media_temp, fill = Month)) +
-  geom_col(width = 0.5) +
-    geom_text(aes(x = Month,
+a <- ggplot(d, aes(x = Month, y = media_temp, fill = Month)) +
+  geom_col(width = 0.6) +
+  geom_text(aes(x = Month,
                 label = round(media_temp)), 
                 size = 4, vjust = 0.03) +
+  scale_x_discrete(breaks = c(5, 6, 7, 8, 9),
+                   labels = c("Maio", "Junho", "Julho",
+                              "Agosto", "Setembro")) +
   labs(x = "Meses", y = "Temperatura média") +
   theme_ipsum_rc(base_size = 10) +
   theme(legend.position = "none")
+a
 
 ## Vento
 
-ggplot(d, aes(x = Month, y = media_vento, fill = Month)) +
-  geom_col(width = 0.5) +
-    geom_text(aes(x = Month,
+b <- ggplot(d, aes(x = Month, y = media_vento, fill = Month)) +
+  geom_col(width = 0.6) +
+  geom_text(aes(x = Month,
                 label = round(media_vento)), 
                 size = 4, vjust = 0.03) +
+  scale_x_discrete(breaks = c(5, 6, 7, 8, 9),
+                   labels = c("Maio", "Junho", "Julho",
+                              "Agosto", "Setembro")) +
   labs(x = "Meses", y = "Ventania média") +
   theme_ipsum_rc(base_size = 10) +
   theme(legend.position = "none")
+b
+
+library(cowplot)
