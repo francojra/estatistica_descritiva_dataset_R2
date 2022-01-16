@@ -1,0 +1,36 @@
+# Descrição de dados -----------------------------------------------------------------------------------------------------------------------
+
+### Descrever valores de média, mediana, desvio padrão, valores máximos e mínimos.
+
+# Carregar dados ---------------------------------------------------------------------------------------------------------------------------
+
+dados <- datasets::airquality
+dados
+
+# Sobre os dados ---------------------------------------------------------------------------------------------------------------------------
+
+### Medidas diárias da qualidade do ar em Nova York de maio a setembro de 1973.
+
+# Estatística descritiva dos dados ---------------------------------------------------------------------------------------------------------
+
+### Descrição dos dados de temperatura e vento 
+
+mean(dados$Temp) # média
+sd(dados$Temp) # desvio-padrão
+median(dados$Temp) # mediana
+max(dados$Temp) # temperatura máxima
+min(dados$Temp) # temperatura mínima
+
+mean(dados$Wind) # média
+sd(dados$Wind) # desvio-padrão
+median(dados$Wind) # mediana
+max(dados$Wind) # temperatura máxima
+min(dados$Wind) # temperatura mínima
+
+library(dplyr) # Pacote usado para análises descritivas
+
+dados %>% 
+  select(Month, Temp, Wind) %>%
+  group_by(Month) %>%
+  arrange(mean(Temp))
+
