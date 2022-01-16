@@ -87,3 +87,5 @@ b <- ggplot(d, aes(x = Month, y = media_vento, fill = Month)) +
 b
 
 library(cowplot)
+
+plot_grid(a, b)
