@@ -51,10 +51,17 @@ library(hrbrthemes)
 ggplot(d, aes(x = Month, y = media_temp, fill = Month)) +
   geom_col() +
     geom_text(aes(x = Month,
-                label = round(media_temp))) +
+                label = round(media_temp)), 
+                size = 4.2,vjust = 0.03) +
   labs(x = "Meses", y = "Temperatura média") +
   theme(legend.position = "none")
 
 ## Vento
 
-
+ggplot(d, aes(x = Month, y = media_vento, fill = Month)) +
+  geom_col() +
+    geom_text(aes(x = Month,
+                label = round(media_vento)), 
+                size = 4.2,vjust = 0.03) +
+  labs(x = "Meses", y = "Ventania média") +
+  theme(legend.position = "none")
