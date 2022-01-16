@@ -44,24 +44,28 @@ d
 
 library(ggplot2) # Pacote para produzir os gráficos
 #install.packages("hrbrthemes")
-library(hrbrthemes)
+library(hrbrthemes) # Pacote para mudar o tema do gráfico (cor preta)
+
+d$Month <- as.factor(d$Month)
 
 ## Temperatura
 
 ggplot(d, aes(x = Month, y = media_temp, fill = Month)) +
-  geom_col() +
+  geom_col(width = 0.5) +
     geom_text(aes(x = Month,
                 label = round(media_temp)), 
-                size = 4.2,vjust = 0.03) +
+                size = 4, vjust = 0.03) +
   labs(x = "Meses", y = "Temperatura média") +
+  theme_ipsum_rc(base_size = 10) +
   theme(legend.position = "none")
 
 ## Vento
 
 ggplot(d, aes(x = Month, y = media_vento, fill = Month)) +
-  geom_col() +
+  geom_col(width = 0.5) +
     geom_text(aes(x = Month,
                 label = round(media_vento)), 
-                size = 4.2,vjust = 0.03) +
+                size = 4, vjust = 0.03) +
   labs(x = "Meses", y = "Ventania média") +
+  theme_ipsum_rc(base_size = 10) +
   theme(legend.position = "none")
