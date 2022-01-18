@@ -44,9 +44,10 @@ d
 
 # 1. Definir variáveis e tipo de gráfico;
 # 2. Definir títulos dos eixos;
-# 3. Acrescentar um tema ao gráfico, reduzir largura das barras e retirar a legenda
-# 4. Transformar mês em variável fatorial e mudar nome dos eixos
-# 5. Nomear os gráficos e uni-los em uma janela.
+# 3. Acrescentar um tema ao gráfico, reduzir largura das barras e retirar a legenda;
+# 4. Adicionar os valores das médias nas barras;
+# 5. Transformar mês em variável fatorial e mudar nome dos eixos;
+# 6. Nomear os gráficos e uni-los em uma janela.
 
 # Gráficos ---------------------------------------------------------------------------------------------------------------------------------
 
